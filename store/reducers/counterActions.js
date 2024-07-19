@@ -7,7 +7,7 @@ export const setCounter = (value) => ({
 
 export const fetchCounter = () => async (dispatch) => {
   try {
-    const response = await axios.get('http://localhost:3000/value');
+    const response = await axios.get('https://next-backend-dummy.onrender.com/value');
     dispatch(setCounter(response.data.counter.value));
   } catch (error) {
     console.error(error);
@@ -16,7 +16,7 @@ export const fetchCounter = () => async (dispatch) => {
 
 export const incrementCounter = () => async (dispatch) => {
   try {
-    const response = await axios.post('http://localhost:3000/increment');
+    const response = await axios.post('https://next-backend-dummy.onrender.com/increment');
     dispatch(setCounter(response.data.counter.value));
   } catch (error) {
     console.error(error);
@@ -25,7 +25,7 @@ export const incrementCounter = () => async (dispatch) => {
 
 export const decrementCounter = () => async (dispatch) => {
   try {
-    const response = await axios.post('http://localhost:3000/decrement');
+    const response = await axios.post('https://next-backend-dummy.onrender.com/decrement');
     dispatch(setCounter(response.data.counter.value));
   } catch (error) {
     console.error(error);
